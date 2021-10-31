@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  bus-alternative-app:
+    build:
+      context: ./
+    container_name: bus-alternative-app
+    tty: true
+    entrypoint: npm run serve
+    volumes: 
+      - ./:/usr/bus-alternative/app
+    ports:
+      - 8080:8080
