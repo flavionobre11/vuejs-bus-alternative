@@ -46,7 +46,7 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  width: 80%;
+  width: 85%;
   border: 1px solid #cecece;
   padding: 0.5rem 1rem;
 }

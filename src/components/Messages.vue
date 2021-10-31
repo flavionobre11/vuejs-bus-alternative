@@ -13,7 +13,7 @@
       </ul>
     </div>
     <button @click="$destroy()" class="destroy-c">
-      destroy component {{ index }}
+      destroy message component {{ index }}
     </button>
   </section>
 </template>
