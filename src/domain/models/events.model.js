@@ -38,13 +38,16 @@ export class Events {
   }
 
   /**
-   * 
-   * @param { string[] } allowedEvents 
-   * @param { string } event 
+   *
+   * @param { string[] } allowedEvents
+   * @param { string } event
    */
-  validate(allowedEvents, event){
-    const isValid = allowedEvents.includes(event)
-    if(!isValid) throw new Error(`[${this.constructor.name}]\tEvento não registrado: ${event}`)
-    return isValid
+  validate(allowedEvents, event) {
+    const isValid = allowedEvents.includes(event);
+    if (!isValid)
+      throw new Error(
+        `[${this.constructor.name}]\tEvento não registrado: ${event}`
+      );
+    return isValid;
   }
 }

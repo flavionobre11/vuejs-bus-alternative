@@ -7,7 +7,7 @@
         </p>
       </li>
     </ul>
-    <button @click="$destroy()">Destroy message 1</button>
+    <button @click="$destroy()">Destroy message 2</button>
   </section>
 </template>
 
@@ -23,7 +23,7 @@ export default {
     }
   },
   mounted(){
-    this.messageEventsService.on('new-message', (data) => this.messages.push(data.message+' - message 1'))
+    this.messageEventsService.on('new-message', (data) => this.messages.push(data.message+' - message 2'))
   }
 }
 </script>
