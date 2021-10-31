@@ -35,13 +35,19 @@ export class MessageEventsService extends Events {
   }
 
   /**
+   * Metodo para remover listener de um evento
+   * @param {string} event evento para remover
+   */
+  removeListener(event) {
+    this.#component.$root.removeListener(`${event}-${this.#id}`);
+  }
+
+  /**
    * Registrar hook quando o componente for destruido
    */
   off() {
-    this.#component.$options.beforeDestroy.push(() => {
-      MESSAGE_EVENTS.forEach((event) =>
-        this.#component.$root.removeListener(`${event}-${this.#id}`)
-      );
-    });
+    this.#component.$once("hook:beforeDestroy", () =>
+      MESSAGE_EVENTS.forEach((event) => this.removeListener(event))
+    );
   }
 }

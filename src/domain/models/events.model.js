@@ -29,6 +29,14 @@ export class Events {
   }
 
   /**
+   * Metodo para remover listener de um evento
+   * @param {string} event evento para remover
+   */
+  removeListener(event) {
+    throw new Error("Metodo não implementado");
+  }
+
+  /**
    * Remove listener on event
    * @abstract
    * @param { string } event

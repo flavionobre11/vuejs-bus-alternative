@@ -1,14 +1,17 @@
 <template>
   <main>
     <div class="divider">
-      <section class="w-100">
-        <Messages :messages="messages" />
-        <InputMessage />
+      <section class="items">
+        <Messages :messages="messages" :index="1" />
+        <InputMessage :index="1" />
       </section>
-
-      <section class="w-100">
-        <Messages2 :messages="messages" />
-        <InputMessage2 />
+      <section class="items">
+        <Messages :messages="messages" :index="2" />
+        <InputMessage :index="2" />
+      </section>
+      <section class="items">
+        <Messages :messages="messages" :index="3" />
+        <InputMessage :index="3" />
       </section>
     </div>
   </main>
@@ -18,13 +21,12 @@
 export default {
   components: {
     Messages: () => import("./Messages.vue"),
-    Messages2: () => import("./Messages2.vue"),
     InputMessage: () => import("./Input.vue"),
-    InputMessage2: () => import("./Input2.vue"),
   },
   data() {
     return {
-      messages: ["oiiii", "vamoo", "oh yeaaa"],
+      messages: [],
+      INSTANCES: 3,
     };
   },
 };
@@ -34,11 +36,13 @@ export default {
 .divider {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
 }
 
-.w-100{
+.items {
   width: 100%;
+  padding: 3rem 0;
 }
 </style>

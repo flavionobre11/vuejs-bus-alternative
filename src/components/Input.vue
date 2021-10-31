@@ -3,7 +3,7 @@
     <div class="input-group">
       <input
         type="text"
-        placeholder="input 1 aqui"
+        :placeholder="`input ${index} aqui`"
         class="input-text"
         v-model="message"
       />
@@ -15,6 +15,10 @@
 <script>
 import { MessageEventsService } from "../services/events/message.events";
 export default {
+  props: {
+    index: Number,
+  },
+
   data() {
     return {
       message: "",
@@ -26,7 +30,6 @@ export default {
     send() {
       this.messageEventsService.emit("new-message", { message: this.message });
       this.message = "";
-      // this.$destroy()
     },
   },
 };
@@ -63,7 +66,7 @@ export default {
   top: 0.35rem;
   /* top: 50%; */
   /* transform: translate(-50%); */
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: rgb(29, 141, 145);
   font-weight: bolder;
   border: 1px solid transparent;
@@ -72,7 +75,7 @@ export default {
 }
 
 .send:hover,
-.send:active {
+.send:focus {
   border: 1px solid turquoise;
 }
 
