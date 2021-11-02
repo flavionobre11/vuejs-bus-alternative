@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/bus-alternative/",
+  publicPath: "/vuejs-bus-alternative/",
 };
