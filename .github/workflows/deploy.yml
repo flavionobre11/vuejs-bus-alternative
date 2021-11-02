@@ -25,7 +25,7 @@ jobs:
       # saiba mais aqui: https://github.com/marketplace?type=actions
 
       - name: Checkout
-        uses: actions/checkout@masterZZ
+        uses: actions/checkout@master
       - name: Criar ambiente do node
         uses: actions/setup-node@v1
         with:
