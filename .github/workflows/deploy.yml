@@ -9,7 +9,7 @@ name: Executar publicação para o GithubPages
 on:
   push:
     branches:
-      - develop
+      - master
 
 # aqui configuramos as tarefas do deploy
 # um dos passos, por exemplo, é a execução dos testes de unidade
