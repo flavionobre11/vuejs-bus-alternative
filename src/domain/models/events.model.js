@@ -2,6 +2,19 @@
  * @class abstract class Events
  */
 export class Events {
+  
+
+  /**
+   * Componente atual
+   */
+  component;
+
+  /**
+   * Identificador unico para o componente
+   */
+  id = `${Math.floor(Math.random() * 1e5).toString(16)}`;
+
+  
   constructor() {
     if (this.constructor === Events) {
       throw new Error(`${Events.name} não pode ser instanciada`);
@@ -9,7 +22,7 @@ export class Events {
   }
 
   /**
-   * Listen event
+   * Adicionar listener a um evento
    * @abstract
    * @param { string } event
    * @param { Function } cb
@@ -19,7 +32,7 @@ export class Events {
   }
 
   /**
-   * Emit event
+   * Emitir um evento
    * @abstract
    * @param { string } event
    * @param {*} data
@@ -37,7 +50,7 @@ export class Events {
   }
 
   /**
-   * Remove listener on event
+   * Remove listener do evento
    * @abstract
    * @param { string } event
    */
@@ -46,7 +59,7 @@ export class Events {
   }
 
   /**
-   *
+   * Valida se um evento pertence aos eventos cadastrados
    * @param { string[] } allowedEvents
    * @param { string } event
    */
