@@ -29,6 +29,7 @@ export default {
 
   methods: {
     send() {
+      if(!this.message) return;
       this.messageEventsService.emit("new-message", { message: this.message });
       this.message = "";
     },
