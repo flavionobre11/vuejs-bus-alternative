@@ -8,8 +8,8 @@
       <div class="divider">
         <section v-for="(items, index) in INSTANCES" :key="index" class="items">
           <h2 class="chat-content-title">Chat {{ index + 1 }}</h2>
-          <Messages :messages="messages" :index="index + 1" />
-          <InputMessage :index="index + 1" />
+          <Messages :messages="messages" :index="index + 1" @destroyed="destroyedsInputs.push(index)" />
+          <InputMessage v-if="!destroyedsInputs.includes(index)" :index="index + 1" />
         </section>
       </div>
     </main>
@@ -46,8 +46,14 @@ export default {
     return {
       messages: [],
       INSTANCES: 4,
+      destroyedsInputs: []
     };
   },
+  methods: {
+    destroyInput(index){
+      this.$refs[`input-message-${index}`][0].$destroy()
+    }
+  }
 };
 </script>
 

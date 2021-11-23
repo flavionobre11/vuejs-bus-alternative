@@ -29,8 +29,8 @@ export default {
 
   methods: {
     send() {
-      if(!this.message) return;
-      this.messageEventsService.emit("new-message", { message: this.message });
+      if(!this.message || /^\s{1,}/g.test(this.message)) return;
+      this.messageEventsService.emit("new-message", { content: this.message.trim(), id: this.index });
       this.message = "";
     },
   },
@@ -75,9 +75,6 @@ export default {
   right: 6%;
   top: .15rem;
   padding: 0;
-  /* top: 50%; */
-  /* transform: translate(-50%); */
-  /* font-size: 2rem; */
   transform: scale(2.2);
   color: rgb(29, 141, 145);
   border-radius: 0.5rem;
