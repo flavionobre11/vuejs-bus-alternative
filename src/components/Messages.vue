@@ -50,7 +50,6 @@ export default {
 
   mounted() {
     this.messageEventsService.on("new-message", (data) =>{
-      if(!data.message) return;
       this.messages.push(`${data.message} (component ${this.index})`)
       this.$nextTick(() => this.scrollToBottom())
     }
