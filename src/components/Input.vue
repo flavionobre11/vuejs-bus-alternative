@@ -6,8 +6,9 @@
         :placeholder="`input ${index} aqui`"
         class="input-text"
         v-model="message"
+        @keydown.enter="send()"
       />
-      <button @click="send()" class="btn send">send</button>
+      <button @click="send()" class="btn send">→</button>
     </div>
   </section>
 </template>
@@ -49,6 +50,14 @@ export default {
   width: 85%;
   border: 1px solid #cecece;
   padding: 0.5rem 1rem;
+  border-radius: .5rem;
+  outline: none;
+  transition: .3s;
+  font-size: .7rem;
+}
+
+.input-text:focus {
+  border: 1px solid #88C8CB;
 }
 
 .btn {
@@ -62,21 +71,23 @@ export default {
 
 .send {
   position: absolute;
-  right: 9%;
-  top: 0.35rem;
+  right: 6%;
+  top: .15rem;
+  padding: 0;
   /* top: 50%; */
   /* transform: translate(-50%); */
-  font-size: 0.8rem;
+  /* font-size: 2rem; */
+  transform: scale(2.2);
   color: rgb(29, 141, 145);
-  font-weight: bolder;
-  border: 1px solid transparent;
   border-radius: 0.5rem;
-  transition: border 0.3s;
+  transition: 0.1s;
 }
 
 .send:hover,
 .send:focus {
-  border: 1px solid turquoise;
+  font-weight: bolder;
+  font-size: 1rem;
+  line-height: .7rem;
 }
 
 .send:active {
