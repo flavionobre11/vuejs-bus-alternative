@@ -1,11 +1,11 @@
 <template>
   <section class="message">
     <div class="message-content" ref="message-content">
-      <p class="text-small text-muted" v-if="!messages.length">
+      <p class="text-small text-muted" v-if="!currentMessages.length">
         não há mensagens no momento
       </p>
       <ul v-else class="message-content-list">
-        <li v-for="(message, index) in messages" :key="index">
+        <li v-for="(message, index) in currentMessages" :key="index">
           <p class="text-small">
             {{ message }}
           </p>
@@ -28,6 +28,7 @@ export default {
   data() {
     return {
       destroyed: false,
+      currentMessages: [...this.messages],
       messageEventsService: new MessageEventsService(this),
     };
   },
@@ -50,7 +51,7 @@ export default {
 
   mounted() {
     this.messageEventsService.on("new-message", (data) =>{
-      this.messages.push(`${data.message} (component ${this.index})`)
+      this.currentMessages.push(`${data.message} (component ${this.index})`)
       this.$nextTick(() => this.scrollToBottom())
     }
     );
