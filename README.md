@@ -7,6 +7,8 @@ Comunicação organizada entre componentes isolados: como criar um serviço de e
   <img src="https://miro.medium.com/max/1400/1*qHoj6zmMCBYX3MnirOmI5w.png" width="420" >
 </figure>
 
+[Demonstração no Github Pages](https://flavionobre11.github.io/vuejs-bus-alternative/)
+
 
 ## Descrição
 Este projeto é fruto de um estudo aplicado sobre as melhores formas de como utilizar eventos usando VueJs. Também, foi preparado o artigo: 
