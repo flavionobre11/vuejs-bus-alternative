@@ -24,7 +24,7 @@
         >
         <span>-</span>
         <a
-          href="https://github.com/flavionobre11/vuejs-bus-alternative"
+          href="https://medium.com/@flavionobre11/event-bus-no-vue2-comunica%C3%A7%C3%A3o-organizada-entre-componentes-isolados-7429fac1b998"
           target="_blank"
           >Medium</a
         >
